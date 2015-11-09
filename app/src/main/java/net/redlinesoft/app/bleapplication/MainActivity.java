@@ -36,6 +36,10 @@ public class MainActivity extends AppCompatActivity  implements BeaconConsumer {
         new BackgroundPowerSaver(this);
         beaconManager = BeaconManager.getInstanceForApplication(this);
         beaconManager.getBeaconParsers().add(new BeaconParser().setBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24,d:25-25"));
+        // set the duration of the scan to be 1.1 seconds
+        beaconManager.setBackgroundScanPeriod(1100l);
+        // set the time between each scan to be 1 hour (3600 seconds)
+        beaconManager.setBackgroundBetweenScanPeriod(3600000l);
         beaconManager.bind(this);
     }
 
