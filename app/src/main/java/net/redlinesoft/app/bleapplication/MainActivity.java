@@ -27,14 +27,13 @@ import java.util.Collection;
 public class MainActivity extends AppCompatActivity  implements BeaconConsumer {
     protected static final String TAG = "RangingActivity";
     private BeaconManager beaconManager;
-    private BackgroundPowerSaver backgroundPowerSaver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        backgroundPowerSaver = new BackgroundPowerSaver(this);
+        new BackgroundPowerSaver(this);
         beaconManager = BeaconManager.getInstanceForApplication(this);
         beaconManager.getBeaconParsers().add(new BeaconParser().setBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24,d:25-25"));
         beaconManager.bind(this);
