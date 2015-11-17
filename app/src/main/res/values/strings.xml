@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">BLE Application</string>
+    <string name="app_name">iBeacon Range</string>
     <string name="title_activity_setting">Setting</string>
 </resources>
